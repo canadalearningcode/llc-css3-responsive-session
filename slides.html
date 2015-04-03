@@ -354,15 +354,175 @@ background: linear-gradient(rgba(30,144,255, 0.8), rgba(0, 0, 0, 0.8)), url(proj
         * one website & one codebase
         * target multiple screens and respond accordingly to the context being viewed by the user
         
-        Prior to responsive and mobile web designs, the rule of thumb was to optimize for the most common resolution. Either a 1024 x 768 or 1280 x 1024 pixel design was the standard. If a mobile version was required, a separate website was created, often under a sub-domain (ex. m.mysite.com). It would have its own design and code base separate from the desktop version.
+        Prior to responsive and mobile web designs, either a 1024 x 768 or 1280 x 1024 pixel design was the standard resolution. If a mobile version was required, a separate mobile website was created (e.g. m.mysite.com).
 
-The main drawback for creating a separate desktop and mobile site would be maintaining two separate code bases. However, this may still be the best option for content heavy sites that require more simplicity for mobile or a layout for mobile users that goes beyond shifting and scaling content.
+        However, for some sites that require more simplicity for mobile or a layout for mobile users that goes beyond shifting and scaling content, this may still be the way to go.
 
-Let’s take a look at an example of a separate desktop and mobile site, canadiantire.ca and m.canadiantire.ca.
+        Let’s take a look at an example of a separate desktop and mobile site, http://canadiantire.ca and http://m.canadiantire.ca.
 
-Responsive web design is not the magic solution but it is a great alternative to creating a separate desktop and mobile site.
+        Responsive web design is not the magic solution but it is a great alternative to creating a separate desktop and mobile site.
       </script>
-    </section>    
+    </section> 
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##Class exercise: Fluid Page Layout
+
+        In **styles.css**, look for your `.content-wrap` code block. Notice that the width is set to a fixed pixel width.
+
+        ```
+        .content-wrap {
+          width: 800px; 
+        }
+        ```
+
+        This means no matter what, that container will always be 800px. Try minimizing the browser. If it is smaller than the declared width, a horizontal scrollbar will display.
+
+        Let&#39;s change `width` to a percentage and add `max-width` and see how that changes the page.  
+
+        ```
+        .content-wrap {
+          max-width: 800px;
+          width: 80%;
+        }
+        ```
+        
+        #####Pro tip!
+        In Sublime, select <!-- .element: class="footnote" --> **Find > Find...** OR **Control/Command F** -- this will open a bar at the bottom of the screen. Type in `.content-wrap` and select **Find**. This will make it easier to search for code snippets.
+      </script>
+    </section> 
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##Media Queries
+
+        Media queries are the key to making a responsive website because it allows you to apply CSS to your document *only* when the screen has reach a certain size. Here is a basic media query.
+
+        ```css
+        @media (max-width: 800px) {
+          body {
+            background: red;
+          }
+        }
+        ```
+        Anything *equal to* or *less than* 800px wide will apply the CSS.
+
+        Note how the CSS is nested inside of the media query&#39;s curly brackets `{}`. Multiple declarations can be included.
+      
+        ```css
+        @media (max-width: 800px) {
+          body {
+            background: red;
+          }
+          h2 {
+            font-size: 20px;
+          }
+        }
+        ```
+      </script>
+    </section>   
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##MEDIA QUERIES AND WIDTH
+        
+        The most common way to use media queries is by targeting the width of a device.
+
+        `max-width` will only apply to a screen that is **equal to** or **smaller** than the value declared.   
+        `min-width` will target screen sizes that are **equal to** or **larger** than the value declared. 
+
+        When mixing width types, be careful about using the same number.
+
+        ```
+        @media (max-width: 400px) {
+          /* 400px and below */
+        }
+
+        @media (min-width: 401px) {
+          /* 401px and above */
+        }
+        ```
+
+        You can also specify a range by combining `min-width` and `max-width`. This will only be applied when the width of your browser is equal to or between the two sizes.
+
+        ```
+        @media (min-width: 768px) and (max-width: 940px) { 
+           /* 768px to 940px */    
+        }
+        ```
+
+        For further reading about media query types, go here: <!-- .element: class="footnote" --> https://developer.mozilla.org/en-US/docs/Web/CSS/@media
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##COMMON BREAKPOINTS
+
+        Trying to target a specific device is tricky because there are so many! It&#39;s best to combine fluid techniques with media queries so the design is flexible and scales in between common breakpoints. Here are some to consider: 
+
+        320px — Mobile portrait  
+        480px — Mobile landscape  
+        600px — Small tablet  
+        768px — Tablet portrait  
+        940px - 1024px — Tablet landscape, small desktop  
+        1280px & greater — Desktop
+
+        These are just general guidelines. Use fluid techniques wherever possible, then add a breakpoint when the design breaks and is no longer suitable that viewport.
+
+        #####Pro tip!
+        Avoid too many media queries.  Usually 3-4 is enough. If you find that you have two media queries that are close, move the styles to one or the other instead of creating another breakpoint. <!-- .element: class="footnote" -->
+      </script>
+    </section>  
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##Class exercise: Media Queries
+
+        Create a simple media query to test if it works!  An effective and simple test is to change a noticeable style like font color or background color change.
+
+
+        ```
+        @media (max-width: 800px) {
+          body {
+            color: white;
+          }
+        }
+        ```
+
+        Media queries only restrict *when* and at *what size** the CSS is applied but other than that, it&#39;s just regular CSS!
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+          ##DON&#39;T FORGET THE VIEWPORT META TAG!
+The viewport meta tag must be included in the of your HTML document to ensure that the page responds on mobile devices. This tag tells browsers (primarily mobile browsers) how to size itself.
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+meta is the tag name and goes in the <head of the web page.
+name="viewport" use viewport to tell the browser sizing information.
+content provides info about how to size the viewport. Multiple key=value are comma separated.
+width=device-width tells the browser to be as wide as the device.
+initial-scale is the zoom value at which the site is zoomed in/out by default. A value of 1.0 will render the size without any zoom.
+user-scalable=no (not shown in example), will limit users from being able to zoom into your website.
+minimum-scale & maximum-scale will limit how far in or out a user can scale/zoom into the website.
+In the Chrome emulator, see how the layout changes once the viewport meta tag is added.
+      </script>
+    </section>
+    <section class="slide" data-markdown>
+      <script type="text/template">
+          ##Final exercise!
+
+          Now that you know how to add a media querie, what styles should you change?  Here are some suggestions
+
+          * Hide elements for smaller screens. ( Use this sparingly though. If you're hiding a lot of content, maybe you don't need it at all?)
+          * Margin, padding and text sizing.
+          * Image sizes and positioning.
+          * :hover effects don&#39;t work on mobile.
+          * Spacing, whitespace, alignment of elements.
+      </script>
+    </section>
     <section class="slide" data-markdown>
       <script type="text/template">
           ##Resources
