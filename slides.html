@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Ladies Learning Code</title>
+  <!-- Don't alter slideshow.css, CSSS slide deck needs it to work -->
+  <link rel="stylesheet" href="framework/css/slideshow.css" data-noprefix>
+
+  <!-- Theme-specific styles -->
+  <link href='http://fonts.googleapis.com/css?family=Quicksand%7CPacifico%7COpen+Sans:400italic,400,300' rel='stylesheet' type='text/css' data-noprefix>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="framework/css/highlightjs-themes/github.css" data-noprefix>
+  <link rel="stylesheet" href="framework/css/theme-llc.css" data-noprefix>
+  <link rel="shortcut icon" href="framework/img/favicon.ico"> 
+
+  <!-- Workshop-specific styles -->
+  <link rel="stylesheet" href="framework/css/workshop.css" data-noprefix>
+
+  <!-- Takes care of CSS3 prefixes! -->
+  <script src="framework/scripts/prefixfree.min.js"></script>
+
+  <!-- opens all links in a new window -->
+  <base target="_blank">
+</head>
+
+<!-- Timer/progress bar: Define the presentation duration using "data-duration" in minutes. -->
+<body data-duration="360">
+  
+  <!-- Welcome slide -->
+  <header class="slide intro first">
+    <img class="logo" src="framework/img/logo-llc-white.png" alt="Ladies Learning Code logo">
+    <div class="info">
+      <h1 class="heading-bg">
+        <span class="dark">Welcome to</span><br>
+        <span>Ladies Learning Code!</span>
+      </h1>
+      <div class="heading-bg connected">
+        <span class="dark">GET CONNECTED:</span>
+        <span class="light">NETWORK: network name</span><br>
+        <span class="light">PASSWORD: thepassword</span>
+      </div>
+    </div>
+
+    <div class="sponsor">
+      <p>In partnership with:</p>
+      <img src="framework/img/telus-logo-white.svg" alt="Telus logo">
+    </div>
+  </header>
+
+  <main>
+    <!-- Instructor info -->
+    <section class="slide intro">
+      <img class="logo" src="framework/img/logo-llc-white.png" alt="Ladies Learning Code logo">
+      <div class="info">
+        <h1 class="heading-bg">
+          <span>Intro to CSS3 &</span><br>
+          <span>Responsive Web Design</span></span>
+        </h1>
+        <h2><span>with</span> Instructor Name</h2>
+
+        <img class="instructor-img" src="http://cl.ly/image/0r3Q3H110G36/profile-generic.jpg" alt="instructor name">
+        <ul>
+          <li><i class="fa fa-envelope"></i><a href="mailto:">hello@email.com</a></li>
+          <li><i class="fa fa-desktop"></i><a href="#">mywebsite.com</a></li>
+          <li><i class="fa fa-twitter"></i><a href="http://twitter.com/">@twitter</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##What is CSS3?
+
+        CSS3 is the latest version of CSS.  
+
+        This version introduced new properties that can be used to manipulate HTML in ways that were previously created with images (e.g. rounded corners, drop shadows, gradients) and animate objects previously created with Flash or JavaScript. 
+
+        Being able to use CSS only can reduce load time of a page and less reliance on extra code and external libraries.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##Vendor Prefixes
+
+        CSS vendor prefixes are used to add browser support for new and/or experimental features. 
+
+        Each browser uses its own prefix to render its own version of that property until the property becomes standardized across all browsers.
+
+        The prefix gets applied to the property name like so:
+
+        ```css
+        -webkit-property-name /* Chrome, Safari, Android, iOs */
+        -moz-property-name /* Internet Explorer */
+        -ms-property-name /* Firefox */
+        -o-property-name /* Opera */
+        ```
+      </script>
+    </section>  
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##Vendor prefixes are temporary
+
+        Not all browsers or all CSS3 properties require prefixes. As newer versions of browsers are released and these properties become part of the official specifications, the prefixes are dropped. 
+
+        To future proof your CSS, list the standard property last. Browsers will ignore the properties it doesn’t understand and move onto the next.
+
+         ```
+        div {
+          -webkit-transform: scale(2); 
+          -moz-transform: scale(2);
+          -ms-transform: scale(2);
+          -o-transform: scale(2);
+          /* Added so that this will continue to work in the future */
+          transfom: scale(2); 
+        }
+  
+        ```
+
+        These days, fewer properties require prefixes and most of the time it’s `-webkit`.
+
+        Resources:<!-- .element: class="footnote" -->  
+        http://caniuse.com - reference  
+        http://pleeease.io/play/ - tool
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##border-radius
+
+        ###Rounded borders
+        <textarea class="snippet" data-subject="#border">border: 2px solid red;
+        border-radius: 5px; </textarea>
+
+        <div id="border" class="example">
+          rounded borders
+        </div>
+
+        ###Rounded element
+        <textarea class="snippet" data-subject="#element">background-color: #B0C4DE;
+        border-radius: 40px;</textarea>
+
+        <div id="element" class="example">
+          rounded element
+        </div>
+
+        ###Rounded image
+        <textarea class="snippet" data-subject="#image">border-radius: 50%;</textarea>
+        <img id="image" src="http://placekitten.com/g/300/300">
+      
+        Placeholder image resources: <!-- .element: class="footnote" -->  
+        http://www.wpfreeware.com/tutorial/placeholder-images-generator-service-web-designers/
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##Text Shadow
+
+        ```
+        text-shadow: [horizontal offset] [vertical offset] [blur radius] [color];
+        ```
+
+        <textarea class="snippet" data-subject="#textshadow">color: #1E90FF;
+text-shadow: 1px 1px 1px #000;</textarea>
+        
+        <div id="textshadow" class="example">
+          Text with shadows!
+        </div>
+
+        * horizontal offset: a positive value will place the shadow on the right of the element, a negative value on the left.
+        * vertical offset: a positive value will show the shadow below the box, a negative valueo above the box, 
+        * blur radius: if set to 0 the shadow will be sharp, the higher the number, the more blurred it will appear. 
+        * color: takes any color value, (hex, keyword, rgba)
+
+        You can also apply multiple text shadows by separating the set of values with a comma.
+
+        ```
+        p { 
+          text-shadow: 1px 1px 1px #000, 3px 3px 5px blue; 
+        }
+        ```
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##Drop/Box Shadow
+
+        Used to add a shadow to an element. The syntax is similar to `text-shadow` but has an additional, but optional. value.
+
+        ```
+        box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color];
+        ```
+        <textarea class="snippet" data-subject="#boxshadow">box-shadow: 2px 4px 10px 0px #888;</textarea>
+        
+        <div id="boxshadow" class="example">
+          Box shadow!
+        </div>
+        
+        * horizontal offset (required): a positive value will place the shadow on the right of the element, a negative value on the left.
+        * vertical offset (required): a positive value will show the shadow below the box, a negative valueo above the box, 
+        * blur radius (required): if set to 0 the shadow will be sharp, the higher the number, the more blurred it will appear.
+        * spread radius (optional): positive values increase the size of the shadow, negative values decrease the size. 
+        * color (required) - takes any color value, (hex, keyword, rgba or hsla)
+          * can use semi-transparent color with `rgba` like this: rgba(0, 0, 0, 0.4) to allow content underneather to show.
+      </script>
+    </section>  
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+          ##Backgrounds and Gradients
+
+          Prior to CSS3, adding gradients to your site had to be done with iamges.  Now, the `background-image` or `background` property can also be used to create a gradient. Using CSS gradients instead of an image file, is better for flexibility and performance.
+
+          With CSS you can control the colours that fade into each other, the direction of the fade, as well as where the color changes happen.
+
+          Use the syntax `linear-gradient(color, color)` to set the start and stop colour. The axis defaults at a top-to-bottom angle.
+
+          To change the direction of the axis to left-to-right, pass an *additional* parameter at the beginning, starting with the word `to` and the direction.  e.g. `linear-gradient(to right, color, color)`
+
+          Add some colors below and try changing the direction and see what happens!
+
+          <textarea class="snippet" data-subject="#lineargradient">background: linear-gradient(color, color);</textarea>
+
+          Learn more about gradients here <!-- .element: class="footnote" --> https://css-tricks.com/css3-gradients/
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##GRADIENTS AND BACKGROUND IMAGES
+
+        Just like CSS shadows, you can also declare multiple backgrounds.  Use this technique to add a colour overalay to your background images!
+
+        Declare the two color values *first* so it can sit "on top" of the image. The overlay should also be opaque to show the image through the gradient. Use RGBA color values to set an alpha transparency.  If you want the overlay to be one colour rather than a gradient, just use the same rgba value for both declarations.
+
+        Get some rbg values here! <!-- .element: class="footnote" -->http://colours.neilorangepeel.com
+
+        <textarea class="snippet" data-subject="#gradientbg">height: 300px; 
+background: linear-gradient(rgba(30,144,255, 0.8), rgba(0, 0, 0, 0.8)), url(project/images/1.jpg);
+</textarea>
+        <div id="gradientbg" class="example">
+          
+        </div>
+      </script>
+    </section>   
+
+    <section class="slide" data-markdown>
+       <script type="text/template">
+          ##Exercise #1 (15mins)  (slides - 40mins)
+
+          Here are some suggestions to add to your site using the techniques covered.
+
+          1. Add a profile image with rounded borders.
+          1. Add some text or box shadows. (Remember, subtle effects are usually best!)
+          1. Add an overlay or gradient effect to the background of one of the page sections.
+       </script>
+    </section> 
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##CSS TRANSITION
+        
+        The `transition` property can be used to add gradual changes whenever a state change occurs (e.g. hover) using four transition properties: `transition-property`, `transition-duration`, `transition-timing-function` and `transition-delay`.
+
+        In the example below, the property being changed is the background color, on hover.  The change will take 1 second and the animation in a linear speed and will be delayed/stalled for 0.5 seconds.
+
+        ```
+        .box {
+          background: #2db34a;
+          transition-property: background;
+          transition-duration: 1s;
+          transition-timing-function: linear;
+          transition-delay: 0.5s;
+        }
+        .box:hover {
+          background: #ff7b29;
+        }
+        ```
+
+        This can also be completed using shorthand.
+
+        <textarea class="snippet" data-subject="#transition">
+        .box {
+          background: #2db34a;
+          transition: background 1s linear 0.5s;
+        }
+        .box:hover {
+          background: #ff7b29;
+        }</textarea>
+
+        <div id="transition" class="example box">
+          transition hover example
+        </div>
+
+        **Important**! Not all properties can be transitioned, only properties that have some kind of in-between value.  For example, you cannot transition display block to display inline.
+
+        Learn more about transitions here: <!-- .element: class="footnote" -->http://learn.shayhowe.com/advanced-html-css/transitions-animations/
+      </script>
+    </section>
+    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+          ##Exercise #2: transition & hover (10mins)
+
+          1. Back in your project, add a hover effect to your links.  Try changing the font colour, or background color or add/remove/change a border style.
+
+          1. Add a transition effect.
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##Class Exercise: animate.css 
+
+        [animate.css](http://daneden.github.io/animate.css/) is a library of various animations that we can use to add a little flair to our page.
+
+        Download the CSS file and add it to your project files.  
+
+        1. Very important! Reference the stylesheet in your HTML page so you can use it.
+
+          ```
+          <link rel="stylesheet" href="css/animate.css">
+          ```
+        1. Add the *class* `animated` to the element you want to animate. You can also include the class `infinite` if you want the animation run continuosly. 
+
+          When using multiple classes, separate them with a space, within the quotes.<!-- .element: class="footnote" -->
+          ```
+          <h1 class="animated infinite">Animate me!</h1>
+          ```
+        1. Pick an animation and add the corresponding class name to your elements. Go [here](https://github.com/daneden/animate.css) or (**View on Github** from the animate.css page) to view all of the documentation and class names.
+          
+          ```
+          <h1 class="animated infinite fadeIn">Example</h1>
+          ```
+      </script>
+    </section>
+
+    <section class="slide title" data-markdown>
+      <script type="text/template">
+          #Intro to Responsive<br>Web Design
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      <script type="text/template">
+        ##Responsive Web Design
+
+        * introduced by Ethan Marcotte in [this article](http://alistapart.com/article/responsive-web-design)  
+        * one website & one codebase
+        * target multiple screens and respond accordingly to the context being viewed by the user
+        
+        Prior to responsive and mobile web designs, the rule of thumb was to optimize for the most common resolution. Either a 1024 x 768 or 1280 x 1024 pixel design was the standard. If a mobile version was required, a separate website was created, often under a sub-domain (ex. m.mysite.com). It would have its own design and code base separate from the desktop version.
+
+The main drawback for creating a separate desktop and mobile site would be maintaining two separate code bases. However, this may still be the best option for content heavy sites that require more simplicity for mobile or a layout for mobile users that goes beyond shifting and scaling content.
+
+Let’s take a look at an example of a separate desktop and mobile site, canadiantire.ca and m.canadiantire.ca.
+
+Responsive web design is not the magic solution but it is a great alternative to creating a separate desktop and mobile site.
+      </script>
+    </section>    
+    <section class="slide" data-markdown>
+      <script type="text/template">
+          ##Resources
+
+          http://css3.bradshawenterprises.com
+      </script>
+    </section>
+
+    <section class="slide" data-markdown>
+      ##Getting your site online
+
+      [Affiliate info for last slide]
+
+      You will need to register a domain name (www.mysite.com) and get hosting. Here are a couple domain & hosting suggestions:
+      
+      * [hover.com](http://hover.com/ladiescode)
+      * [dreamhost.com](http://www.dreamhost.com/r.cgi?2085384) - Use coupon code **LLC40** to get $40 off your registration!
+
+      To get your files online, you will need upload your files to your newly purchased hosting server. There are a few pieces of information you will need and are usually provided to you by your hosting service provider.
+
+      * FTP Address
+      * Username
+      * Password
+
+      Here&#39;s a nice tutorial getting your files online using FileZilla: [FileZilla Client Tutorial](https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_%28en%29)
+
+      Feeling adventurous? Try [Hosting Static Sites on Github for Beginners](http://thephuse.com/development/hosting-static-sites-on-github-for-beginners/).
+    </section>
+
+    <!-- Last slide -->
+    <section class="slide last">
+      <h2>Thank you!</h2>
+
+      <h2 class="heading-bg">
+        <span>Title of Workshop</span><br>
+        <span>Second line</span>
+      </h2>
+      <h3><span>with</span> Instructor Name</h3>
+
+       <img class="instructor-img" src="http://cl.ly/image/0r3Q3H110G36/profile-generic.jpg" alt="instructor name">
+      <ul>
+        <li><i class="fa fa-envelope"></i><a href="mailto:">hello@email.com</a></li>
+        <li><i class="fa fa-desktop"></i><a href="#">mywebsite.com</a></li>
+        <li><i class="fa fa-twitter"></i><a href="http://twitter.com/">@twitter</a></li>
+      </ul>
+
+      <p class="attribution">Slide presentation created with <a href="https://github.com/LeaVerou/csss">Lea Verou&#39;s CSS-based SlideShow System</a> and <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.</p>
+    </section>
+
+  </main><!-- cls main section -->
+
+  <footer>
+    <p class="license"><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.svg" /></a> by <a prefix="cc: http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
+    <p class="instructions">Use the left <i class="fa fa-arrow-left"></i> and right <i class="fa fa-arrow-right"></i> arrow keys to navigate</p>
+  </footer>
+  
+  <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="framework/scripts/slideshow.js"></script>
+
+  <!-- Uncomment the plugins you need -->
+  <script src="framework/scripts/plugins/css-edit.js"></script>
+  <script src="framework/scripts/plugins/css-snippets.js"></script>
+  <script src="framework/scripts/plugins/css-controls.js"></script>
+  <!-- <script src="plugins/code-highlight.js"></script>-->
+
+  <script src="framework/scripts/plugins/markdown/marked.js"></script>
+  <script src="framework/scripts/plugins/markdown/markdown.js"></script>
+  <!-- <script src="framework/scripts/plugins/highlight/highlight.js"></script> -->
+  <script src="framework/scripts/plugins/highlight/highlight-8.4.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  <script>
+    var slideshow = new SlideShow();
+
+    // Grabs all the .snippet elements
+    var snippets = document.querySelectorAll('.snippet');
+    for(var i=0; i<snippets.length; i++) {
+      new CSSSnippet(snippets[i]);
+    }
+
+    // Adds "edit me" note to editable code areas
+    jQuery(document).ready(function(){
+      jQuery(".snippet").before("<span class=\"edit\">edit me</span>");
+    });
+  </script>
+</body>
+</html>
