@@ -35,11 +35,11 @@
         <span class="dark">Welcome to</span><br>
         <span>Ladies Learning Code!</span>
       </h1>
-      <div class="heading-bg connected">
+      <!-- <div class="heading-bg connected">
         <span class="dark">GET CONNECTED:</span>
         <span class="light">NETWORK: network name</span><br>
         <span class="light">PASSWORD: thepassword</span>
-      </div>
+      </div> -->
     </div>
 
     <div class="sponsor">
@@ -57,14 +57,14 @@
           <span>Intro to CSS3 &</span><br>
           <span>Responsive Web Design</span></span>
         </h1>
-        <h2><span>with</span> Instructor Name</h2>
+        <!-- <h2><span>with</span> Instructor Name</h2>
 
         <img class="instructor-img" src="http://cl.ly/image/0r3Q3H110G36/profile-generic.jpg" alt="instructor name">
         <ul>
           <li><i class="fa fa-envelope"></i><a href="mailto:">hello@email.com</a></li>
           <li><i class="fa fa-desktop"></i><a href="#">mywebsite.com</a></li>
           <li><i class="fa fa-twitter"></i><a href="http://twitter.com/">@twitter</a></li>
-        </ul>
+        </ul> -->
       </div>
     </section>
 
@@ -119,11 +119,9 @@
   
         ```
 
-        These days, fewer properties require prefixes and most of the time it’s `-webkit`.
+        These days, few properties require prefixes so it&#39;s good to have resources handy, to stay up to date.
 
-        Resources:<!-- .element: class="footnote" -->  
-        http://caniuse.com - reference  
-        http://pleeease.io/play/ - tool
+        Resources:<!-- .element: class="footnote" --> http://caniuse.com (reference), http://pleeease.io/play/ (tool)
       </script>
     </section>
     
@@ -171,10 +169,10 @@ text-shadow: 1px 1px 1px #000;</textarea>
           Text with shadows!
         </div>
 
-        * horizontal offset: a positive value will place the shadow on the right of the element, a negative value on the left.
-        * vertical offset: a positive value will show the shadow below the box, a negative valueo above the box, 
-        * blur radius: if set to 0 the shadow will be sharp, the higher the number, the more blurred it will appear. 
-        * color: takes any color value, (hex, keyword, rgba)
+        * **horizontal offset**: positive values puts the shadow to the right of the text, negative values on the left
+        * **vertical offset**: a positive value will show the shadow below the text, a negative value above 
+        * **blur radius**: if set to 0, the shadow will be sharp, a higher number creates a more blurred effect
+        * **color**: takes any color value, (hex, keyword, rgba)
 
         You can also apply multiple text shadows by separating the set of values with a comma.
 
@@ -190,7 +188,7 @@ text-shadow: 1px 1px 1px #000;</textarea>
       <script type="text/template">
         ##Drop/Box Shadow
 
-        Used to add a shadow to an element. The syntax is similar to `text-shadow` but has an additional, but optional. value.
+        Used to add a shadow to an element. The syntax is similar to `text-shadow` but has an additional, but optional value.
 
         ```
         box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color];
@@ -201,11 +199,11 @@ text-shadow: 1px 1px 1px #000;</textarea>
           Box shadow!
         </div>
         
-        * horizontal offset (required): a positive value will place the shadow on the right of the element, a negative value on the left.
-        * vertical offset (required): a positive value will show the shadow below the box, a negative valueo above the box, 
-        * blur radius (required): if set to 0 the shadow will be sharp, the higher the number, the more blurred it will appear.
-        * spread radius (optional): positive values increase the size of the shadow, negative values decrease the size. 
-        * color (required) - takes any color value, (hex, keyword, rgba or hsla)
+        * **horizontal offset (required):** positive values places the shadow on the right of the element, a negative value on the left
+        * **vertical offset (required):** a positive value will show the shadow below the box, a negative valueo above the box 
+        * **blur radius (required):** if set to 0, the shadow will be sharp, the higher the number, the more blurred it will appear
+        * **spread radius (optional):** positive values increase the size of the shadow, negative values decrease the size 
+        * **color (required):** - takes any color value, (hex, keyword, rgba or hsla)
           * can use semi-transparent color with `rgba` like this: rgba(0, 0, 0, 0.4) to allow content underneather to show.
       </script>
     </section>  
@@ -214,13 +212,11 @@ text-shadow: 1px 1px 1px #000;</textarea>
       <script type="text/template">
           ##Backgrounds and Gradients
 
-          Prior to CSS3, adding gradients to your site had to be done with iamges.  Now, the `background-image` or `background` property can also be used to create a gradient. Using CSS gradients instead of an image file, is better for flexibility and performance.
+          Prior to CSS3, adding gradients to your site had to be done with images.  Now, the `background-image` or `background` property can also be used to create a gradient. Using CSS gradients instead of an image file, is better for flexibility and performance.
 
-          With CSS you can control the colours that fade into each other, the direction of the fade, as well as where the color changes happen.
+          Use the syntax `linear-gradient(color, color)` to set the start and stop colour. 
 
-          Use the syntax `linear-gradient(color, color)` to set the start and stop colour. The axis defaults at a top-to-bottom angle.
-
-          To change the direction of the axis to left-to-right, pass an *additional* parameter at the beginning, starting with the word `to` and the direction.  e.g. `linear-gradient(to right, color, color)`
+          The axis defaults at a top-to-bottom angle. To change the direction of the axis to left-to-right, pass an *additional* parameter at the beginning, starting with the word `to` and the direction.  e.g. `linear-gradient(to right, color, color)`
 
           Add some colors below and try changing the direction and see what happens!
 
@@ -234,7 +230,7 @@ text-shadow: 1px 1px 1px #000;</textarea>
       <script type="text/template">
         ##GRADIENTS AND BACKGROUND IMAGES
 
-        Just like CSS shadows, you can also declare multiple backgrounds.  Use this technique to add a colour overalay to your background images!
+        Just like CSS shadows, you can also declare multiple backgrounds.  Use this technique to add a colour overlay to your background images!
 
         Declare the two color values *first* so it can sit "on top" of the image. The overlay should also be opaque to show the image through the gradient. Use RGBA color values to set an alpha transparency.  If you want the overlay to be one colour rather than a gradient, just use the same rgba value for both declarations.
 
@@ -251,13 +247,21 @@ background: linear-gradient(rgba(30,144,255, 0.8), rgba(0, 0, 0, 0.8)), url(proj
 
     <section class="slide" data-markdown>
        <script type="text/template">
-          ##Exercise #1 (15mins)  (slides - 40mins)
+          ##Exercise #1 (15mins)
 
-          Here are some suggestions to add to your site using the techniques covered.
+          Here are some suggestions to experiment with.  They may not work with your design but try it out!
 
-          1. Add a profile image with rounded borders.
-          1. Add some text or box shadows. (Remember, subtle effects are usually best!)
-          1. Add an overlay or gradient effect to the background of one of the page sections.
+          Add a profile image with rounded corners or as a circle. See example below:
+
+          ![](framework/img/workshop/profile-img.png)
+          
+          Add some text or box shadows. See example below:
+          
+          ![](framework/img/workshop/text-shadow.png)
+          
+          Add an overlay or gradient effect to the background of one of the page sections. This effect is useful when your text is hard to read on top of a image background. You can add an opaque colour to the background.
+
+          See <!-- .element: class="footnote" --> [project/examples/exercise1.html](project/examples/exercise1.html) and [project/examples/exercise1.css](project/examples/exercise1.css) for reference.
        </script>
     </section> 
 
@@ -310,6 +314,10 @@ background: linear-gradient(rgba(30,144,255, 0.8), rgba(0, 0, 0, 0.8)), url(proj
           1. Back in your project, add a hover effect to your links.  Try changing the font colour, or background color or add/remove/change a border style.
 
           1. Add a transition effect.
+
+          [Go here](project/examples/exercise2.html) to see an example and hover over the logo and navigation to see the effects.
+
+          See <!-- .element: class="footnote" --> [project/examples/exercise2.html](project/examples/exercise2.html) and [project/examples/exercise2.css](project/examples/exercise2.css) for reference.
       </script>
     </section>
 
