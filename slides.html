@@ -74,9 +74,9 @@
 
         CSS3 is the latest version of CSS.  
 
-        This version introduced new properties that can be used to manipulate HTML in ways that were previously created with images (e.g. rounded corners, drop shadows, gradients) and animate objects previously created with Flash or JavaScript. 
+        This version introduced new properties that can be used to manipulate HTML in ways that were previously created with images (e.g. rounded corners, drop shadows, gradients) and animate objects the once relied on Flash or JavaScript. 
 
-        Being able to use CSS only can reduce load time of a page and less reliance on extra code and external libraries.
+        Being able to create these effects with just CSS is ideal because it can reduce page load times and less reliance on extra code and external libraries.
       </script>
     </section>
 
@@ -119,7 +119,7 @@
   
         ```
 
-        These days, few properties require prefixes so it&#39;s good to have resources handy, to stay up to date.
+        Avoid adding a prefix if the browser doesn&#39;t require it. These days, fewer properties require prefixes so it&#39;s good to have resources handy, to stay up to date.
 
         Resources:<!-- .element: class="footnote" --> http://caniuse.com (reference), http://pleeease.io/play/ (tool)
       </script>
@@ -128,6 +128,10 @@
     <section class="slide" data-markdown>
       <script type="text/template">
         ##border-radius
+
+        The `border-radius` property can be used to make rounded corners or a perfect circle (if the element is a perfect square). See below for examples and try changing some of the values to see what happens!
+
+        Any time you see the "edit me" box, go ahead and change the values and experiment. <!-- .element: class="footnote" -->
 
         ###Rounded borders
         <textarea class="snippet" data-subject="#border">border: 2px solid red;
@@ -188,7 +192,7 @@ text-shadow: 1px 1px 1px #000;</textarea>
       <script type="text/template">
         ##Drop/Box Shadow
 
-        Used to add a shadow to an element. The syntax is similar to `text-shadow` but has an additional, but optional value.
+        Adds a shadow to an element. The syntax is similar to `text-shadow` but has an additional value.
 
         ```
         box-shadow: [horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color];
@@ -199,12 +203,12 @@ text-shadow: 1px 1px 1px #000;</textarea>
           Box shadow!
         </div>
         
-        * **horizontal offset (required):** positive values places the shadow on the right of the element, a negative value on the left
-        * **vertical offset (required):** a positive value will show the shadow below the box, a negative valueo above the box 
-        * **blur radius (required):** if set to 0, the shadow will be sharp, the higher the number, the more blurred it will appear
-        * **spread radius (optional):** positive values increase the size of the shadow, negative values decrease the size 
-        * **color (required):** - takes any color value, (hex, keyword, rgba or hsla)
-          * can use semi-transparent color with `rgba` like this: rgba(0, 0, 0, 0.4) to allow content underneather to show.
+        * **horizontal offset:** positive values puts the shadow on the right of the box, negative values on the left
+        * **vertical offset:** a positive value will show the shadow below the box, a negative value above the box 
+        * **blur radius:** if set to 0, the shadow will be sharp. higher number creates more blur
+        * **spread radius (optional):** positive values increase the size of the shadow, negative values decrease it 
+        * **color:** - takes any color value, (hex, keyword, rgba or hsla)
+          * can use semi-transparent color with `rgba` like this: rgba(0, 0, 0, 0.4) to allow content underneath to show through. The last value declares the alpha transparency.
       </script>
     </section>  
 
@@ -216,7 +220,7 @@ text-shadow: 1px 1px 1px #000;</textarea>
 
           Use the syntax `linear-gradient(color, color)` to set the start and stop colour. 
 
-          The axis defaults at a top-to-bottom angle. To change the direction of the axis to left-to-right, pass an *additional* parameter at the beginning, starting with the word `to` and the direction.  e.g. `linear-gradient(to right, color, color)`
+          The axis defaults at a **top-to-bottom** angle. To change the direction of the axis to **left-to-right**, pass an *additional* parameter at the beginning, starting with the word `to` and the direction.  e.g. `linear-gradient(to right, color, color)`
 
           Add some colors below and try changing the direction and see what happens!
 
@@ -249,17 +253,19 @@ background: linear-gradient(rgba(30,144,255, 0.8), rgba(0, 0, 0, 0.8)), url(proj
        <script type="text/template">
           ##Exercise #1 (15mins)
 
-          Here are some suggestions to experiment with.  They may not work with your design but try it out!
+          Here are some suggestions to experiment with.  They may not look good with your design but give it a try anyway and just remove it if you don&#39;t like it! 
 
-          Add a profile image with rounded corners or as a circle. See example below:
+          You can apply these styles to your own project or use the base project included in this download located in the<!-- .element: class="footnote" --> **project** folder. 
 
-          ![](framework/img/workshop/profile-img.png)
+          1. Add a profile image with rounded corners or as a circle. See example below:
+
+            ![](framework/img/workshop/profile-img.png)
           
-          Add some text or box shadows. See example below:
+          2. Add some text or box shadows. See example below:
           
-          ![](framework/img/workshop/text-shadow.png)
+            ![](framework/img/workshop/text-shadow.png)
           
-          Add an overlay or gradient effect to the background of one of the page sections. This effect is useful when your text is hard to read on top of a image background. You can add an opaque colour to the background.
+          3. Add an overlay or gradient effect to the background of one of the page sections. This effect is useful when your text is hard to read on top of a image background. You can add an opaque colour to the background to make the text stand out more or to add a colour overlay on top of the image for style.
 
           See <!-- .element: class="footnote" --> [project/examples/exercise1.html](project/examples/exercise1.html) and [project/examples/exercise1.css](project/examples/exercise1.css) for reference.
        </script>
@@ -334,7 +340,7 @@ background: linear-gradient(rgba(30,144,255, 0.8), rgba(0, 0, 0, 0.8)), url(proj
           ```
           <link rel="stylesheet" href="css/animate.css">
           ```
-        1. Add the *class* `animated` to the element you want to animate. You can also include the class `infinite` if you want the animation run continuosly. 
+        1. Add the *class* `animated` to the element you want to animate. You can also include the class `infinite` if you want the animation to run continuosly. 
 
           When using multiple classes, separate them with a space, within the quotes.<!-- .element: class="footnote" -->
           ```
@@ -384,7 +390,7 @@ background: linear-gradient(rgba(30,144,255, 0.8), rgba(0, 0, 0, 0.8)), url(proj
         }
         ```
 
-        This means no matter what, that container will always be 800px. Try minimizing the browser. If it is smaller than the declared width, a horizontal scrollbar will display.
+        This means no matter what, that container will always be 800px. Try minimizing the browser. If it is smaller than the declared width, a horizontal scrollbar will display. (Most noticeable in the About section.)
 
         Let&#39;s change `width` to a percentage and add `max-width` and see how that changes the page.  
 
@@ -498,47 +504,62 @@ background: linear-gradient(rgba(30,144,255, 0.8), rgba(0, 0, 0, 0.8)), url(proj
         }
         ```
 
-        Media queries only restrict *when* and at *what size** the CSS is applied but other than that, it&#39;s just regular CSS!
+        Media queries only restrict *when* the CSS is applied but other than that, it&#39;s just regular CSS!
       </script>
     </section>
     
     <section class="slide" data-markdown>
       <script type="text/template">
-          ##DON&#39;T FORGET THE VIEWPORT META TAG!
-The viewport meta tag must be included in the of your HTML document to ensure that the page responds on mobile devices. This tag tells browsers (primarily mobile browsers) how to size itself.
+        ##DON&#39;T FORGET THE VIEWPORT META TAG!
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-meta is the tag name and goes in the <head of the web page.
-name="viewport" use viewport to tell the browser sizing information.
-content provides info about how to size the viewport. Multiple key=value are comma separated.
-width=device-width tells the browser to be as wide as the device.
-initial-scale is the zoom value at which the site is zoomed in/out by default. A value of 1.0 will render the size without any zoom.
-user-scalable=no (not shown in example), will limit users from being able to zoom into your website.
-minimum-scale & maximum-scale will limit how far in or out a user can scale/zoom into the website.
-In the Chrome emulator, see how the layout changes once the viewport meta tag is added.
+        The **viewport meta tag** must be included in the of your HTML document to ensure that the page responds on mobile devices. This tag tells browsers (primarily mobile browsers) how to size itself.
+
+        ```
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        ```
+
+        * **meta** is the tag name and goes in the `<head>` of the web page.
+        * **name="viewport"** -  use viewport to tell the browser sizing information.
+        * **content** provides info about how to size the viewport. Multiple key=value are comma separated.
+        * **width=device-width** tells the browser to be as wide as the device.
+        * **initial-scale** is the zoom value at which the site is zoomed in/out by default. A value of 1.0 will render the size without any zoom.
+        * **user-scalable=no** (not shown in example), will limit users from being able to zoom into your website.
+        * **minimum-scale** & **maximum-scale** (not shown in example) will limit how far in or out a user can scale/zoom into the website.
+
+        More about the viewport meta tag <!-- .element: class="footnote" -->[here](http://webdesign.tutsplus.com/articles/quick-tip-dont-forget-the-viewport-meta-tag--webdesign-5972).
       </script>
     </section>
     <section class="slide" data-markdown>
       <script type="text/template">
           ##Final exercise!
 
-          Now that you know how to add a media querie, what styles should you change?  Here are some suggestions
+          Now that you know how to add a media query, what styles should you change?  Here are some suggestions:
 
           * Hide elements for smaller screens. ( Use this sparingly though. If you're hiding a lot of content, maybe you don't need it at all?)
           * Margin, padding and text sizing.
           * Image sizes and positioning.
           * :hover effects don&#39;t work on mobile.
           * Spacing, whitespace, alignment of elements.
+          * remove large images for mobile size.
+
+          Take a look at [project/final.html](project/final.html) and [project/final.css](project/final.css) for a demo and reference.
       </script>
     </section>
     <section class="slide" data-markdown>
       <script type="text/template">
-          ##Resources
+        ##Extra resources
 
-          http://css3.bradshawenterprises.com
+        Readings & Tutorials
+
+        * http://learn.shayhowe.com/advanced-html-css/responsive-web-design
+        * http://blog.teamtreehouse.com/beginners-guide-to-responsive-web-design
+        * http://responsivedesign.is/resources
+
+        Stay up to date with [Ladies Learning Code&#39;s mailing list](http://ladieslearningcode.us2.list-manage1.com/subscribe?u=ffce8cb0bd8c24faff9817f63&id=8e2c6e3dea) and attend to one of our full-day Responsive Design workshops.
       </script>
     </section>
-
+    
+    <!-- 
     <section class="slide" data-markdown>
       ##Getting your site online
 
@@ -559,23 +580,25 @@ In the Chrome emulator, see how the layout changes once the viewport meta tag is
 
       Feeling adventurous? Try [Hosting Static Sites on Github for Beginners](http://thephuse.com/development/hosting-static-sites-on-github-for-beginners/).
     </section>
+    -->
 
     <!-- Last slide -->
     <section class="slide last">
       <h2>Thank you!</h2>
 
       <h2 class="heading-bg">
-        <span>Title of Workshop</span><br>
-        <span>Second line</span>
+        <span>Intro to CSS3 &</span><br>
+        <span>Responsive Web Design</span></span>
       </h2>
-      <h3><span>with</span> Instructor Name</h3>
 
-       <img class="instructor-img" src="http://cl.ly/image/0r3Q3H110G36/profile-generic.jpg" alt="instructor name">
+      <!-- <h3><span>with</span> Instructor Name</h3>
+
+      <img class="instructor-img" src="http://cl.ly/image/0r3Q3H110G36/profile-generic.jpg" alt="instructor name">
       <ul>
         <li><i class="fa fa-envelope"></i><a href="mailto:">hello@email.com</a></li>
         <li><i class="fa fa-desktop"></i><a href="#">mywebsite.com</a></li>
         <li><i class="fa fa-twitter"></i><a href="http://twitter.com/">@twitter</a></li>
-      </ul>
+      </ul> -->
 
       <p class="attribution">Slide presentation created with <a href="https://github.com/LeaVerou/csss">Lea Verou&#39;s CSS-based SlideShow System</a> and <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.</p>
     </section>
