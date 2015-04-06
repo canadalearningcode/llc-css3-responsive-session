@@ -1,6 +1,6 @@
 #Ladies Learning Code
 
-##APIs: Intro to CSS3 & Responsive Web Design
+##Intro to CSS3 & Responsive Web Design
 
 1.5hr introductory workshop
 
